@@ -644,8 +644,8 @@ every pattern variable has a well-defined value, ruling out many useful optimiza
 the matching order is implementation-dependent.
 </p>
 
-<small>
 <p>
+<small>
 Note: A concern has been raised about the lack of guarantees regarding the static and dynamic environments of non-pattern
 sub-expressions in certain pattern forms. The constraints described above limit the set of match forms with
 well-defined semantics. This design choice aims to give implementations additional latitude for optimization —
@@ -659,9 +659,8 @@ and post hoc validation. To support this, a companion matching form, <code>match
 This form would explicitly enforce left-to-right matching and scoping, making pattern variables immediately
 available for downstream reference. As with the distinction between <code>letrec</code> and <code>letrec*</code>,
 a separate form would make the programmer’s intent clear.
-</p>
 </small>
-
+</p>
 
 <p>
 Some patterns, marked as <i>(iterative)</i>  in the pattern entry's header line, may match the input
