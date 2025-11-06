@@ -40,7 +40,7 @@ SPDX-License-Identifier: MIT
   <li>
     <a href="#examples">Examples</a>
     <ul>
-      <li><a href="#srfi-204-examples">SRFI-204 Examples</a></li>
+      <li><a href="#srfi-204-examples">SRFI 204 Examples</a></li>
       <li>
         <a href="#advanced-examples">Advanced Examples</a>
         <ul>
@@ -93,7 +93,7 @@ SPDX-License-Identifier: MIT
 Pattern matching extends Scheme's repertoire of conditional constructs, allowing
 decomposition of compound data structures and binding their parts to variables.
 This SRFI proposes one such construct, <code>match</code>, which offers all
-the core functionality specified in <a href="https://srfi.schemers.org/srfi-200/">SRFI-200</a>,
+the core functionality specified in <a href="https://srfi.schemers.org/srfi-200/">SRFI 200</a>,
 while extending it with support for non-linear patterns and backtracking.
 The proposed construct is modular and supports easy extension through the <code>define-match-pattern</code>
 mechanism. It can be implemented portably in R⁷RS-Small.</p>
@@ -106,10 +106,10 @@ mechanism. It can be implemented portably in R⁷RS-Small.</p>
 
 <p>
 This SRFI proposes a construct with functionality similar to the one of “Wright-style”
-pattern matcher (see <a href="https://srfi.schemers.org/srfi-204/">SRFI-204</a>), with the following
+pattern matcher (see <a href="https://srfi.schemers.org/srfi-204/">SRFI 204</a>), with the following
 differences: it supports backtracking, and it is designed in a modular way, allowing user extensions
 not only in the form of new types of patterns, but also new pattern matching languages, such as
-the Dybvig-Friedman-Hilsdale matcher (<a href="https://srfi.schemers.org/srfi-241/">SRFI-241</a>).
+the Dybvig-Friedman-Hilsdale matcher (<a href="https://srfi.schemers.org/srfi-241/">SRFI 241</a>).
 </p>
 
 <p>
@@ -135,7 +135,7 @@ reader abbreviations and thus are built into the matcher.
 
 <p>
 Traditional patterns, resembling printed representations, are supported “under quasiquote”,
-as proposed in (withdrawn) <a href="https://srfi.schemers.org/srfi-200/">SRFI-200</a>.
+as proposed in (withdrawn) <a href="https://srfi.schemers.org/srfi-200/">SRFI 200</a>.
 New types of patterns as well as new forms of pattern languages can be built via
 <code>define-match-pattern</code> form, which provides a <code>syntax-rules</code> -like
 mechanism for pattern rewriting.
@@ -143,10 +143,10 @@ mechanism for pattern rewriting.
 
 <h2 id="examples">Examples</h2>
 
-<h3 id="srfi-204-examples">SRFI-204 Examples</h3>
+<h3 id="srfi-204-examples">SRFI 204 Examples</h3>
 
 <p>
-The examples below are taken from <a href="https://srfi.schemers.org/srfi-204/">SRFI-204</a>
+The examples below are taken from <a href="https://srfi.schemers.org/srfi-204/">SRFI 204</a>
 and adapted to demonstrate the same functionality using the proposed pattern syntax in its
 constructor-like and quasiquoted forms:
 </p>
