@@ -1,3 +1,6 @@
+;;;; SPDX-FileCopyrightText: Sergei Egorov
+;;;; SPDX-License-Identifier: MIT
+
 (import (scheme base) (srfi 64)
         (srfi 257) (srfi 257 misc)
         (srfi 111) (srfi 257 box))

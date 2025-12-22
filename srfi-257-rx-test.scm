@@ -1,3 +1,6 @@
+;;;; SPDX-FileCopyrightText: Sergei Egorov
+;;;; SPDX-License-Identifier: BSD-3-Clause
+
 (import (scheme base) (srfi 64))
 (import (srfi 257) (srfi 257 rx) (srfi 264))
 
@@ -53,12 +56,15 @@
   (match phs ((~/etcse "({a}*): ({d}*)-({d}*)-({d}*)" _ t (~and a "412")) (list t a)) (_ #f)))
 
 
-;;;; tests below adapted from the SRE ref. imp. tests by Alex Shinn
-;;;; by selectively converting regexes to SSRE strings
+;;;; SPDX-SnippetBegin
+;;;; SPDX-SnippetName: Incorporated SRE Ref. Imp. Tests
+;;;; SPDX-SnippetFromFileName: lib/chibi/regexp-test.sld
+;;;; SPDX-SnippetLicenseConcluded: BSD-3-Clause
+;;;; SPDX-SnippetCopyrightText: 2015 - 2019 Alex Shinn
 
-;;;; SPDX-FileCopyrightText: 2015 - 2019 Alex Shinn
-;;;;
-;;;; SPDX-License-Identifier: BSD-3-Clause
+;;;; tests below adapted from the SRE ref. imp. tests by Alex Shinn
+;;;; https://github.com/ashinn/chibi-scheme/blob/master/lib/chibi/regexp-test.sld
+;;;; by selectively converting regexes to SSRE strings
 
 (test-equal '("ababc" "abab")
   (match "ababc" ((~/ (rx ($ (* "ab")) "c") a b) (list a b)) (_ #f)))
@@ -304,5 +310,7 @@
   (match "abc123def456ghi789" ((~/partitioned (rx (* numeric)) l) l)))
 (test-equal '("abc" "123" "def" "456" "ghi" "789")
   (match "abc123def456ghi789" ((~/partitioned "{d}*" l) l)))
+
+;; SPDX-SnippetEnd
 
 (test-end)
