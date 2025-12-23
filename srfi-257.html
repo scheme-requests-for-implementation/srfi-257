@@ -1406,7 +1406,7 @@ The <code>(srfi 257 misc)</code> sublibrary exports miscellaneous forms defined 
 <p>
   <code>(<b>~etc**</b></code> ⟨<i>k</i> ⟩ ⟨<i>j</i> ⟩ ⟨<i>mp</i> ⟩<code>)</code>
     &nbsp;&nbsp;<i>match pattern</i><br>
-  The <code>~etc**</code> pattern matches a proper list such that its length lies in a range,
+  The <code>~etc**</code> pattern matches a proper list such that its length lies in a range
   defined by the ⟨<i>k</i> ⟩ and ⟨<i>j</i> ⟩ expressions (inclusive), and every one of its elements matches the ⟨<i>mp</i> ⟩ pattern.
   It is equivalent to the <code>~etc</code> pattern, constrained by list length.<br/>
   &nbsp;&nbsp;&nbsp;&nbsp;<i>Note:</i>  The first two arguments are expressions, evaluated
@@ -1424,8 +1424,8 @@ The <code>(srfi 257 misc)</code> sublibrary exports miscellaneous forms defined 
 <p>
   <code>(<b>sr-match</b></code> ⟨<i>expression</i> ⟩ ⟨<i>literals</i> ⟩ ⟨<i>sr-rule</i> ⟩<code> &hellip;)</code>
     &nbsp;&nbsp;<i>syntax</i><br>
-  The <code>sr-match</code> form implements a matcher that uses <code>syntax-rules</code>
-  -like pattern conventions: a symbolic pattern is treated as ⟨<i>match pattern name</i> ⟩
+  The <code>sr-match</code> form implements a matcher that uses <code>syntax-rules</code>-like
+  pattern conventions: a symbolic pattern is treated as ⟨<i>match pattern name</i> ⟩
   unless it is contained in the list of ⟨<i>literals</i> ⟩. Each ⟨<i>sr-rule</i> ⟩
   is similar to the regular ⟨<i>match rule</i> ⟩ as described in the main specification,
   with the following change: instead of ⟨<i>match pattern</i> ⟩,
@@ -1434,7 +1434,7 @@ The <code>(srfi 257 misc)</code> sublibrary exports miscellaneous forms defined 
   <code>equal?</code> object), an ⟨<i>underscore</i> ⟩ (matches any object),
   a ⟨<i>match pattern name</i> ⟩ (matches and binds any object), a ⟨<i>literal</i> ⟩
   (matches itself), or a pair/vector of ⟨<i>sr-pattern</i> ⟩s, matched recursively
-  with a similarly-structured objects. If element of a list or vector is immediately followed
+  with a similarly structured objects. If element of a list or vector is immediately followed
   by an ⟨<i>ellipsis</i> ⟩, this element is matched as if implicitly wrapped in <code>~etc</code>
   pattern; as <code>syntax-rules</code>, <code>sr-match</code> does not support multiple
   ellipses on the same level.
@@ -1536,10 +1536,10 @@ fail even if ⟨<i>re</i> ⟩ matches no substrings; their ‘+’ variants fa
 &nbsp;&nbsp;&nbsp;&nbsp;In the ‘all’/‘all+’ patterns, the ⟨<i>mp</i> ⟩&hellip; subpatterns are matched against the parallel
 lists of the submatch/capture strings as described above; their original order in the input string
 is preserved.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;The ‘etc’/‘etc+’ patterns wrap their ⟨<i>mp</i> ⟩&hellip; subpatterns in an impilcit <code>~etc</code>
+&nbsp;&nbsp;&nbsp;&nbsp;The ‘etc’/‘etc+’ patterns wrap their ⟨<i>mp</i> ⟩&hellip; subpatterns in an implicit <code>~etc</code>
 pattern, so they are matched against individual substrings before being aggregated into lists. This
 is useful if additional constraints need to be set on individual substrings to filter the resulting lists.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;The ‘etcse’ pattern wraps its ⟨<i>mp</i> ⟩&hellip; subpatterns in an impilicit <code>~etcse</code>
+&nbsp;&nbsp;&nbsp;&nbsp;The ‘etcse’ pattern wraps its ⟨<i>mp</i> ⟩&hellip; subpatterns in an implicit <code>~etcse</code>
 pattern, skipping matches that fail the subpattern constraints. Thus, the <code>~/etcse</code> pattern
 never fails on any input string.
 </p>
@@ -1661,7 +1661,7 @@ the basic, logical, and core pattern types.
 <h2 id="implementation">Implementation</h2>
 
 <p>
-Sample <code>syntax-rules</code>-based implementation is available.
+A sample <code>syntax-rules</code>-based implementation is available.
 It runs on many R⁶RS and R⁷RS and some R⁵RS Schemes (tested on Chibi, Chez, Guile, Skint;
 there are reports that it runs on TR7 and SXM).
 </p>
